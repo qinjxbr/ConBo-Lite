@@ -2,7 +2,7 @@
 
 ConBo (Convolutional Bokeh) is a lightweight vision-based framework for nighttime structural vibration monitoring based on the Bokeh Effect (as seen in the following figure). It transforms luminous targets in bridge videos into shape-normalized bokeh-like responses, enabling stable tracking, displacement extraction, and motion magnification under low-light, low-texture, and long-distance conditions.
 
-<img width="743" height="245" alt="image" src="https://github.com/user-attachments/assets/270757b5-33d4-419c-b5e0-d52b541cb32a" />
+<img width="962" height="317" alt="image" src="https://github.com/user-attachments/assets/270757b5-33d4-419c-b5e0-d52b541cb32a" />
 
 Related papers:
 
@@ -12,7 +12,7 @@ Related papers:
 
 3. Jingxi Qin, Wenhui Duan, Jiale Long, Haoliang Zhao, and Yong Xia, “Convolutional Bokeh method for nighttime full-field bridge monitoring via shape-normalized luminous tracking and phase reconstruction-based motion magnification,” *Engineering Structures*, 2026.
 
-# ConBo-Lite
+## ConBo-Lite
 
 This is a controlled teaching implementation of one 12-step Convolutional Bokeh method with two interfaces. **ConBo-Track is the foundation. ConBo-Mag inherits its target initialization, MVGC preprocessing and detected geometry, then adds fixed-ROI Gaussian phase reconstruction and motion magnification.**
 
