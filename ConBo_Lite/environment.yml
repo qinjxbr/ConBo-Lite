@@ -1,9 +1,0 @@
-name: conbo-lite
-channels: [pytorch, conda-forge]
-dependencies:
-  - python>=3.10
-  - numpy>=1.24
-  - pytorch>=2.1
-  - pip
-  - pip:
-      - opencv-contrib-python>=4.8
