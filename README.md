@@ -2,6 +2,8 @@
 
 This is a controlled teaching implementation of one 12-step Convolutional Bokeh method with two interfaces. **ConBo-Track is the foundation. ConBo-Mag inherits its target initialization, MVGC preprocessing and detected geometry, then adds fixed-ROI Gaussian phase reconstruction and motion magnification.**
 
+<img width="962" height="546" alt="屏幕截图 2026-07-22 183959" src="https://github.com/user-attachments/assets/3c189e7b-2808-4b80-be11-fdfc38e0e88f" />
+
 ## Click Run in an IDE
 
 Open `demo.py`. Its first section contains `RUN_NAME`, `MODE`, input/output paths, frame range, optional points, MVGC, ROI/kernel, amplification, device, video, and display settings. Edit these values and click **Run**. Command-line arguments are optional and override the same settings when supplied.
