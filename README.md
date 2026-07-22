@@ -1,4 +1,4 @@
-## About ConBo
+# About ConBo
 
 ConBo (Convolutional Bokeh) is a lightweight vision-based framework for nighttime structural vibration monitoring based on the Bokeh Effect (as seen in the following figure). It transforms luminous targets in bridge videos into shape-normalized bokeh-like responses, enabling stable tracking, displacement extraction, and motion magnification under low-light, low-texture, and long-distance conditions.
 
