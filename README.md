@@ -1,4 +1,4 @@
-# ConBo Lite Refactored
+# ConBo-Lite
 
 This is a controlled teaching implementation of one 12-step Convolutional Bokeh method with two interfaces. **ConBo-Track is the foundation. ConBo-Mag inherits its target initialization, MVGC preprocessing and detected geometry, then adds fixed-ROI Gaussian phase reconstruction and motion magnification.**
 
@@ -104,20 +104,10 @@ Defaults are recorded in `configs/default.yaml`; the executable CLI exposes the 
 - `conbo/pipeline.py`: shared target state and 12-step orchestration.
 - `conbo/magnification.py`: exact Gaussian-response FFT reconstruction and optional fast phase-shift estimation.
 - `conbo/video_io.py`: native-resolution interaction and outputs.
-- `docs/`: audit, validation, and two short English tutorials.
+- `docs/`: Chinese tutorials.
 - `tests/`: boundary, kernel, and ellipse geometry checks.
 
 ## CPU/GPU behavior
 
 The main pipeline's `auto` device mode uses CUDA only when its target batch is large enough. Adaptive's default fast proxy remains on vectorized CPU because the MX450 test showed that many small mask/component operations do not amortize GPU transfer and launch cost; explicitly setting `DEVICE = "cuda"` still enables the experimental GPU proxy. Exact finalist convolution and every-frame Track EdgeDrawing remain unchanged.
 
-## Known limitations
-
-- Detection requires a visible, approximately elliptical normalized response. On a miss, the previous geometry is retained without applying a new amplified displacement; the CSV marks the relevant `track_valid`/`mag_valid` field as zero.
-- Manually selected targets keep stable IDs, but this lite implementation does not introduce the manuscript's Kalman/Hungarian data association because it is absent from the executable v6.1 reference scripts.
-- Base-referenced phase magnification can degrade after large appearance changes, consistent with the manuscript limitation.
-- Adaptive MVGC searches a compact local grid and fully validates finalists. If no exact finalist passes every calibration frame, it uses the best available candidate and prints a warning.
-- Long field-video validation against GPS or laser ground truth is outside this lightweight refactor run.
-
-See `docs/code_audit.md` for retained/corrected behavior and `docs/validation.md` for measured checks.
-See `docs/加速方案.md` for measured bottlenecks, expected speedups, and whether each proposed optimization changes a core method principle.
